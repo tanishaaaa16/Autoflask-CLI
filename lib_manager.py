@@ -73,3 +73,21 @@ def install_libraries(pip_path, libraries, project_path):
         return False
     
     
+if __name__ == "__main__":
+    # Example usage
+    project_location = os.getcwd()
+    project_name = "Demo"
+    project_cat = "Web Development"
+    
+    # Create project directory
+    full_project_path = os.path.join(project_location, project_name)
+    os.makedirs(full_project_path, exist_ok=True)
+    
+    # Setup virtual environment
+    pip_path = setup_virtual_environment(full_project_path)
+    
+    if pip_path:
+        # Install libraries
+        selected_libs = category_libs.get(project_cat, [])
+        install_libraries(pip_path, selected_libs, full_project_path)
+    

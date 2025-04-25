@@ -126,7 +126,7 @@ def create_auth_templates():
             f.write("""{% extends "base.html" %}
 {% block content %}
 <h2>Login</h2>
-<form method="post">
+<form method="POST">
     <input type="text" name="username" placeholder="Username" required><br>
     <input type="password" name="password" placeholder="Password" required><br>
     <button type="submit">Login</button>
@@ -145,7 +145,7 @@ def create_auth_templates():
             f.write("""{% extends "base.html" %}
 {% block content %}
 <h2>Register</h2>
-<form method="post">
+<form method="POST">
     <input type="text" name="username" placeholder="Username" required><br>
     <input type="password" name="password" placeholder="Password" required><br>
     <button type="submit">Register</button>
@@ -179,3 +179,9 @@ def create_auth_templates():
     except OSError as e:
         print(f"Failed to create authentication templates: {e}")
         return False
+    
+if __name__ == "__main__":
+    # Example usage
+    project_name = "my_flask_app"
+    setup_authentication(project_name)
+    # setup_authentication(project_name)

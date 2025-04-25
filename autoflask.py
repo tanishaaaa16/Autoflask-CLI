@@ -3,6 +3,7 @@ import argparse
 from lib_manager import category_libs
 from setup_project import setup_project
 
+
 def main():
     print("Welcome to AutoFlask!")
     parser = argparse.ArgumentParser(description="Create a new Flask project.")
