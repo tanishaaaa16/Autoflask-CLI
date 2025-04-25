@@ -13,7 +13,7 @@ body {
                 f.write("""{% extends "base.html" %}
 {% block content %}
     <div class="container">
-        <h1>FlaskForge Project Setup Successful! 🚀</h1>
+        <h1>AutoFlask Project Setup Successful! 🚀</h1>
     </div>
 {% endblock %}
 {% block css %}
@@ -52,7 +52,7 @@ body {
                 f.write("""{% extends "base.html" %}
 {% block content %}
     <div class="container mx-auto">
-        <h1>FlaskForge Project Setup Successful! 🚀</h1>
+        <h1>AutoFlask Project Setup Successful! 🚀</h1>
     </div>
 {% endblock %}
 {% block css %}
@@ -84,7 +84,7 @@ body {
             with open('templates/index.html', 'w', encoding="utf-8") as f:
                 f.write("""{% extends "base.html" %}
 {% block content %}
-    <h1>FlaskForge Project Setup Successful! 🚀</h1>
+    <h1>AutoFlask Project Setup Successful! 🚀</h1>
 {% endblock %}
 {% block css %}
 

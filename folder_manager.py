@@ -143,7 +143,7 @@ def create_requirements_file(selected_libs, auth_libs=None):
 if __name__ == "__main__":
     # Example usage
     project_location = os.getcwd()
-    project_name = "MyProject"
+    project_name = "Demo"
     project_cat = "Web Development"
     
     full_project_path = create_project_directory(project_location, project_name)
