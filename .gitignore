@@ -1,4 +1,5 @@
 /basic-dir/
 
-
-autoflask.py
+/__pycache__/
+/autoflask_cli.egg-info/
+/build

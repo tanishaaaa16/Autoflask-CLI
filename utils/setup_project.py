@@ -1,8 +1,8 @@
 import os
-from folder_manager import create_project_directory, navigate_to_directory, create_project_structure, create_app_py, create_requirements_file
-from lib_manager import setup_virtual_environment, install_libraries, get_auth_libs
-from template_manager import create_css_templates
-from auth_manager import setup_authentication
+from .folder_manager import create_project_directory, navigate_to_directory, create_project_structure, create_app_py, create_requirements_file
+from .lib_manager import setup_virtual_environment, install_libraries, get_auth_libs
+from .template_manager import create_css_templates
+from .auth_manager import setup_authentication
 
 def setup_project(create_venv, project_name, project_cat, additional_libs, install_libs, 
                   project_location, css_framework, add_auth, selected_libs):

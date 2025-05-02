@@ -1,7 +1,7 @@
 import os
 import argparse
-from lib_manager import category_libs
-from setup_project import setup_project
+from utils.lib_manager import category_libs
+from utils.setup_project import setup_project
 
 
 def main():
