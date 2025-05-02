@@ -88,13 +88,13 @@ def setup_project(create_venv, project_name, project_cat, additional_libs, insta
 if __name__ == "__main__":
     # Example usage
     setup_project(
-        create_venv=False,
+        create_venv=True,
         project_name="MyFlaskApp",
         project_cat="Machine Learning",
         additional_libs=["numpy", "pandas"],
-        install_libs=False,
+        install_libs=True,
         project_location=os.getcwd(),
         css_framework="Tailwind",
         add_auth=True,
-        selected_libs=["requests"]
+        selected_libs=["pillow"]
     )
