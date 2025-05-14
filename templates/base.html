@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add your CSS files here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>My Flask App</h1>
+        <!-- Navigation bar can go here -->
+    </header>
+    <main>
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ current_year if current_year else "2024" }} My Flask App</p>
+    </footer>
+    <!-- Add your JS files here -->
+    <script src="{{ url_for('static', filename='main1.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html> 
