@@ -2,27 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}My Flask App{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add your CSS files here -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    {% block head %}{% endblock %}
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    {% block extra_css %}{% endblock %}
 </head>
-<body>
-    <header>
-        <h1>My Flask App</h1>
-        <!-- Navigation bar can go here -->
-    </header>
-    <main>
-        {% block content %}
-        <!-- Page-specific content will go here -->
-        {% endblock %}
+<body class="bg-[#0f172a] text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-[#1e293b] border-b border-[#334155]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="{{ url_for('main.index') }}" class="text-2xl font-bold text-white hover:text-[#6366f1] transition-colors duration-200">
+                            CodeCraft
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
+                    <a href="{{ url_for('main.index') }}" class="nav-link-3d text-white hover:text-[#6366f1] px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="{{ url_for('main.docs') }}" class="nav-link-3d text-white hover:text-[#6366f1] px-3 py-2 rounded-md text-sm font-medium">Documentation</a>
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.logout') }}" class="nav-link-3d text-white hover:text-[#6366f1] px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="nav-link-3d text-white hover:text-[#6366f1] px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                        <a href="{{ url_for('auth.signup') }}" class="btn-3d inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-[#0f172a] bg-[#22d3ee] hover:bg-[#06b6d4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#22d3ee]">
+                            Sign Up
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                    <div class="rounded-md p-4 {% if category == 'error' %}bg-red-500{% else %}bg-green-500{% endif %} text-white">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>&copy; {{ current_year if current_year else "2024" }} My Flask App</p>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e293b] border-t border-[#334155] mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-[#94a3b8] text-sm">
+                &copy; 2024 CodeCraft. All rights reserved.
+            </p>
+        </div>
     </footer>
-    <!-- Add your JS files here -->
-    <script src="{{ url_for('static', filename='main1.js') }}"></script>
-    {% block scripts %}{% endblock %}
+
+    {% block extra_js %}{% endblock %}
 </body>
 </html> 

@@ -4,7 +4,7 @@ setup(
     name="autoflask-cli",
     version="1.0.0",
     description="A CLI tool for automating Flask app creation and management",
-    author="Tanisha Singh",
+    author="Satyajeet Das",
     author_email="your.email@example.com",
     packages=find_packages(),
     py_modules=["autoflask"],

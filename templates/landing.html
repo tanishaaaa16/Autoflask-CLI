@@ -27,8 +27,8 @@
     <link rel="canonical" href="https://autoflask.com/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+    <!--<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">-->
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -60,9 +60,9 @@
     </script>
 
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" aria-label="Toggle theme">
+   <!-- <button class="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-sun"></i>
-    </button>
+    </button>-->
 
     <!-- Required dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -71,9 +71,9 @@
 </head>
 <body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen grid-background">
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" aria-label="Toggle theme">
+    <!--<button class="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-sun"></i>
-    </button>
+    </button>-->
 
     <!-- Navigation -->
     <nav class="bg-gray-900/80 backdrop-blur-md shadow-lg fixed w-full z-50">
@@ -122,6 +122,43 @@
         </div>
     </div>
 
+    <!-- Overview Section (Custom Insert) -->
+    <div class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 card-3d p-8 rounded-xl mb-12" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-white mb-6 text-center">Welcome to AutoFlask Automation Tool</h2>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Overview</h3>
+            <p class="text-lg text-gray-300 mb-6">AutoFlask Automation Tool is a powerful web-based interface built using Flask, designed to automate manual tasks by converting simple CLI commands into actionable responses. With a focus on speed and efficiency, this tool streamlines common operations that usually require repetitive manual input.</p>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Key Features</h3>
+            <ul class="list-disc list-inside text-lg text-gray-300 mb-6">
+                <li><b>Automates Manual Tasks:</b> Execute routine tasks with just a few commands.</li>
+                <li><b>Command-Line Interface (CLI) Integration:</b> Accepts user input via commands and provides tailored responses.</li>
+                <li><b>API-Driven Architecture:</b> Powered by AutoFlask to generate backend endpoints automatically from OpenAPI specifications.</li>
+                <li><b>User-Friendly Web Interface:</b> Simplifies interaction with the backend logic without needing deep technical knowledge.</li>
+                <li><b>Customizable Logic:</b> Responds based on command intent and user-defined requirements.</li>
+            </ul>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">How It Works</h3>
+            <ol class="list-decimal list-inside text-lg text-gray-300 mb-6">
+                <li><b>User Enters Command:</b> The user types a command into the CLI-style input box.</li>
+                <li><b>Backend Processes Request:</b> The backend API receives the input and maps it to pre-defined logic or workflows.</li>
+                <li><b>Automated Response:</b> The server processes the input and provides the appropriate response or performs the necessary action.</li>
+            </ol>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Use Cases</h3>
+            <ul class="list-disc list-inside text-lg text-gray-300 mb-6">
+                <li>Automating daily developer tasks (e.g., setting up files, running scripts)</li>
+                <li>Quickly generating configurations or templates</li>
+                <li>Teaching or demonstrating API-driven automation workflows</li>
+                <li>Simplifying testing and backend interaction for students or developers</li>
+            </ul>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-4">Technologies Used</h3>
+            <ul class="list-disc list-inside text-lg text-gray-300">
+                <li>AutoFlask – For generating Flask APIs from OpenAPI specs</li>
+                <li>Flask – Python-based web framework</li>
+                <li>HTML/CSS/JavaScript – For the frontend interface</li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Overview Section -->
+
     <!-- Features Grid -->
     <div class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,12 +205,10 @@
                 <p class="mt-4 text-lg text-gray-300">Watch how easy it is to create a new Flask application</p>
             </div>
             <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl card-3d" data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-gray-900 flex items-center justify-center">
-                    <div class="text-center">
-                        <i class="fas fa-play-circle text-blue-400 text-6xl mb-4 animate-pulse interactive-element"></i>
-                        <p class="text-white text-lg">Demo Video Coming Soon</p>
-                    </div>
-                </div>
+                <video class="w-full h-full" controls>
+                    <source src="{{ url_for('static', filename='landing.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </div>
@@ -228,7 +263,7 @@
             </div>
             <div class="mt-12 pt-8 border-t border-gray-800">
                 <p class="text-gray-400 text-sm text-center">
-                    © 2025 AutoFlask. All rights reserved.
+                    © 2024 AutoFlask. All rights reserved.
                 </p>
             </div>
         </div>
@@ -237,7 +272,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='main1.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

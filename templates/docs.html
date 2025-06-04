@@ -118,7 +118,32 @@ app.run()</code></pre>
                             </div>
                         </section>
 
-                        <section id="api-reference" class="mb-12">
+                        <!-- How to Use Section (Custom Insert) -->
+                        <section id="how-to-use" class="mb-12">
+                            <h2 class="text-3xl font-bold text-[#f8fafc] mb-4">How to Use</h2>
+                            <p class="text-[#94a3b8] mb-4">Create a new Flask project.</p>
+                            <div class="bg-[#1e293b] rounded-lg p-4 mb-4 overflow-x-auto">
+                                <pre class="text-[#f8fafc] text-sm"><code>positional arguments:
+  name                 Name of the project
+
+options:
+  -h, --help           show this help message and exit
+  --venv-true          Create a virtual environment
+  --venv-false         Do not create a virtual environment
+  --cat CAT            Category of project (Web Development, Machine Learning, etc.)
+  --libs LIBS          Additional libraries to install (comma-separated)
+  --install-true       Install selected libraries
+  --install-false      Do not install selected libraries
+  --location LOCATION  Project location (defaults to current directory)
+  --auth               Include Flask Authentication
+  --css-tailwind       Use Tailwind CSS
+  --css-bootstrap      Use Bootstrap CSS
+  --css-none           Do not use any CSS framework</code></pre>
+                            </div>
+                        </section>
+                        <!-- End How to Use Section -->
+
+                       <!-- <section id="api-reference" class="mb-12">
                             <h2 class="text-3xl font-bold text-[#f8fafc] mb-4">API Reference</h2>
                             <div class="space-y-6">
                                 <div>
@@ -146,7 +171,7 @@ app.run()</code></pre>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <p class="text-[#94a3b8] text-sm">
-                    © 2024 AutoFlask. All rights reserved.
+                    © 2025 AutoFlask. All rights reserved.
                 </p>
             </div>
         </div>
@@ -155,7 +180,7 @@ app.run()</code></pre>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='main1.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-button').addEventListener('click', function() {
